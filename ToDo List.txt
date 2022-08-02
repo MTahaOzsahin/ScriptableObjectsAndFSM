@@ -1,10 +1,15 @@
-Player movement, will check if there is a obstacle that block movement and if so will curve movement.
+---------------------------------To Do--------------------------------------
 
-Will add line of sight to enemy chase state.
+1.Player movement, will check if there is a obstacle that block movement and if so will curve movement.
+
+2.Will add line of sight to enemy chase state.
+
+
+3.Will add more state. I am open to state ideas. 
+
+-------------------------------Need Fix -----------------------------------
+
+-------------------------------Completed-----------------------------------
+
 
 Enemy Chase state will stop and return patrol state if player escape to line of sight.
-
-Wİll add more state. I am open to state ideas. 
-
-
-
