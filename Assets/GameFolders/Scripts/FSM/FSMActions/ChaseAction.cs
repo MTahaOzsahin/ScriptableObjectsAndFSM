@@ -13,7 +13,7 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
         {
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var enemySightSensor = stateMachine.GetComponent<EnemySightSensor>();
-
+            if (enemySightSensor.Player == null) return;
             navMeshAgent.SetDestination(enemySightSensor.Player.position);
         }
     }
