@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 namespace ScriptableObjectsAndFSM.Player
 {
-    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(NavMeshAgent))]
     public class Mover : MonoBehaviour
     {
         /// <summary>
@@ -16,19 +17,19 @@ namespace ScriptableObjectsAndFSM.Player
 
         [SerializeField] InputAction playerInputAction;
         [SerializeField] float playerSpeed = 5f;
-        [SerializeField] float playerFastSpeed = 10f;
-        [SerializeField] float rotationSpeed = 6f;
+        [SerializeField] float playerFastSpeed = 8f;
+        [SerializeField] float rotationSpeed = 360f;
         Camera mainCamera;
         int groundLayer;
         Coroutine coroutine;
         Vector3 targetPosition;
-        CharacterController characterController;
+        NavMeshAgent navMeshAgent;
 
         private void Awake()
         {
             mainCamera = Camera.main;
-            characterController = GetComponent<CharacterController>();
             groundLayer = LayerMask.NameToLayer("Ground");
+            navMeshAgent = GetComponent<NavMeshAgent>();
         }
         private void OnEnable()
         {
@@ -52,26 +53,28 @@ namespace ScriptableObjectsAndFSM.Player
                 if (coroutine != null) StopCoroutine(coroutine);
                 if (context.started)
                 {
-                    coroutine = StartCoroutine(PlayerMoveCoroutine(hit.point, playerSpeed));
+                    coroutine = StartCoroutine(PlayerMoveCoroutine(hit.point, playerSpeed,rotationSpeed));
                 }
                 else if (context.performed)
                 {
-                    coroutine = StartCoroutine(PlayerMoveCoroutine(hit.point, playerFastSpeed));
+                    coroutine = StartCoroutine(PlayerMoveCoroutine(hit.point, playerFastSpeed,rotationSpeed));
                 }
                 targetPosition = hit.point;
             }
         }
-        IEnumerator PlayerMoveCoroutine(Vector3 target,float moveSpeed)
+        IEnumerator PlayerMoveCoroutine(Vector3 target,float moveSpeed,float rotationSpeed)
         {
             float playerDistanceToFloor = transform.position.y - target.y;
             target.y += playerDistanceToFloor;
             while (Vector3.Distance(transform.position,target) > 0.2f)
             {
-                Vector3 direction = target - transform.position;
-                Vector3 movement = direction.normalized * moveSpeed * Time.deltaTime;
-                characterController.Move(movement);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction.normalized),
-                    rotationSpeed * Time.deltaTime);
+                navMeshAgent.destination = target;
+                navMeshAgent.speed = moveSpeed;
+                navMeshAgent.angularSpeed = rotationSpeed;
+                if(Vector3.Distance(transform.position,target) < 0.4f)
+                {
+                    navMeshAgent.speed = (moveSpeed / 3);
+                }
                 yield return null;
             }
         }
