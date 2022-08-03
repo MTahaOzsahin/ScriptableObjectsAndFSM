@@ -15,8 +15,9 @@ namespace ScriptableObjectsAndFSM.Enemy
 
         public Transform GetNext()
         {
-            Transform point = patrolPoints[currentPoint];
-            currentPoint = (currentPoint + 1) % patrolPoints.Length;
+            //Transform point = patrolPoints[currentPoint];
+            //currentPoint = (currentPoint + 1) % patrolPoints.Length;
+            Transform point = patrolPoints[Random.Range(currentPoint,patrolPoints.Length)];
             return point;
         }
         public bool HasReached(NavMeshAgent agent)
