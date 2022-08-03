@@ -2,6 +2,9 @@
 
 1.Will add more state. I am open to state ideas. 
 
+2.Will add to enemies check if stuck. 
+(Enemies stuck around obstacle when player escaped to FOW.)
+
 -------------------------------Need Fix -----------------------------------
 
 -------------------------------Completed-----------------------------------

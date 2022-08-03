@@ -71,7 +71,7 @@ namespace ScriptableObjectsAndFSM.Player
                 navMeshAgent.destination = target;
                 navMeshAgent.speed = moveSpeed;
                 navMeshAgent.angularSpeed = rotationSpeed;
-                if(Vector3.Distance(transform.position,target) < 0.4f)
+                if(Vector3.Distance(transform.position,target) < 0.3f)
                 {
                     navMeshAgent.speed = (moveSpeed / 3);
                 }
