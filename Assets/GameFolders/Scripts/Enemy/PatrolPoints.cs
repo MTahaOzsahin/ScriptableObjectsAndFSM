@@ -8,12 +8,19 @@ namespace ScriptableObjectsAndFSM.Enemy
     public class PatrolPoints : MonoBehaviour
     {
         [SerializeField] Transform[] patrolPoints;
-
+        Vector3 startPosition;
         public Transform CurrentPoint => patrolPoints[currentPoint];
         public GameObject nextPatrolPoint { get; set; }
 
-        int currentPoint = 0;
+        public Vector3 StartPosition => startPosition;
 
+
+
+        int currentPoint = 0;
+        private void Awake()
+        {
+            startPosition = transform.position;
+        }
         public Transform GetNext()
         {
             Transform point = patrolPoints[Random.Range(currentPoint,patrolPoints.Length)];

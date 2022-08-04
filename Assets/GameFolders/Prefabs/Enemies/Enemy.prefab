@@ -843,3 +843,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStateText: {fileID: 2119315635}
   nextPatrolPointText: {fileID: 874364069}
+  velocity: 0

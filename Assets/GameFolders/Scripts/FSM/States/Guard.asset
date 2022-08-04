@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935ded31efef855418786d0efa552512, type: 3}
-  m_Name: Chase
+  m_Name: Guard
   m_EditorClassIdentifier: 
   Action:
-  - {fileID: 11400000, guid: a58279a424ce39c49814472877784462, type: 2}
+  - {fileID: 11400000, guid: aaf8e875e3807ad46889f06aeca57d8c, type: 2}
   Transitions:
-  - {fileID: 11400000, guid: 6c88febcc46e34640b1121b4777a028f, type: 2}
   - {fileID: 11400000, guid: 6dcf8375e2816ac4abec0699f40bd99f, type: 2}

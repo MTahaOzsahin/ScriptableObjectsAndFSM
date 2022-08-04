@@ -19,7 +19,7 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
-                navMeshAgent.velocity = Vector3.one;
+                navMeshAgent.velocity = (Vector3.one * 3);
             }
         }
     }

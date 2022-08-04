@@ -36,6 +36,7 @@ namespace ScriptableObjectsAndFSM.Enemy
         void NextPatrolPoint()
         {
             var nextPatrolPoint = patrolPoints.nextPatrolPoint;
+            if (nextPatrolPoint == null) return;
             nextPatrolPointText.text =("Next Patrol Point: " + nextPatrolPoint.ToString());
         }
         void CurrentVelocity()
