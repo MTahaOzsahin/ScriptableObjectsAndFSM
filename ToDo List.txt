@@ -2,8 +2,7 @@
 
 1.Will add more state. I am open to state ideas. 
 
-2.Will add to enemies check if stuck. 
-(Enemies stuck around obstacle when player escaped to FOW.)
+
 
 -------------------------------Need Fix -----------------------------------
 
@@ -15,3 +14,6 @@ Enemy Chase state will stop and return patrol state if player escape to line of 
 Will add Fİeld of view to enemy.
 
 Player movement, will check if there is a obstacle that block movement and if so will curve movement.
+
+Will add to enemies check if stuck. 
+(Enemies stuck around obstacle when player escaped to FOW.)

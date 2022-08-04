@@ -10,14 +10,14 @@ namespace ScriptableObjectsAndFSM.Enemy
         [SerializeField] Transform[] patrolPoints;
 
         public Transform CurrentPoint => patrolPoints[currentPoint];
+        public GameObject nextPatrolPoint { get; set; }
 
         int currentPoint = 0;
 
         public Transform GetNext()
         {
-            //Transform point = patrolPoints[currentPoint];
-            //currentPoint = (currentPoint + 1) % patrolPoints.Length;
             Transform point = patrolPoints[Random.Range(currentPoint,patrolPoints.Length)];
+            nextPatrolPoint = point.gameObject;
             return point;
         }
         public bool HasReached(NavMeshAgent agent)
