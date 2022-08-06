@@ -17,7 +17,7 @@ namespace ScriptableObjectsAndFSM.FSM
             {
                 stateMachine.CurrentState = TrueState;
             }
-            else if(!Decision.Decide(stateMachine) && !(FalseState is RemainInState))
+            else if (!Decision.Decide(stateMachine) && !(FalseState is RemainInState))
             {
                 stateMachine.CurrentState = FalseState;
             }

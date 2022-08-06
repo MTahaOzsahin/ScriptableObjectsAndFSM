@@ -995,6 +995,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8378700812093661072, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
+      propertyPath: isFixedState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378700812093661072, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: _initialState
       value: 
       objectReference: {fileID: 11400000, guid: 8394d450dc83b1f43921df1a841fc983, type: 2}
@@ -2352,7 +2356,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2385,7 +2389,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2587,7 +2591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812450378912, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: currentStateText
@@ -4176,7 +4180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812450378912, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: currentStateText

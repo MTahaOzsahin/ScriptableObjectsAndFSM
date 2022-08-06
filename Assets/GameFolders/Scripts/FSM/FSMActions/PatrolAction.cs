@@ -14,8 +14,10 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
             if (patrolPoints.HasReached(navMeshAgent))
+            {
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
-            if (navMeshAgent.velocity.magnitude < 0.02f) // To avoid enemy stuck around obstackle after lose player.
+            }
+            else if (navMeshAgent.velocity.magnitude < 0.02f) // To avoid enemy stuck around obstackle after lose player.
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);

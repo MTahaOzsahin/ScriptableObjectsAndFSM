@@ -7,13 +7,20 @@ namespace ScriptableObjectsAndFSM.FSM
     public class BaseStateMachine : MonoBehaviour
     {
         [SerializeField] BaseState _initialState;
+        [SerializeField,Tooltip("if wanted to use fixed state and fixed transitions")] bool isFixedState;
+        
         Dictionary<Type, Component> _cachedComponents;
+
+        public BaseState CurrentState { get; set; }
+        public bool IsFixedState { get; set; }
         private void Awake()
         {
             CurrentState = _initialState;
+            IsFixedState = isFixedState;
             _cachedComponents = new Dictionary<Type, Component>();
         }
-        public BaseState CurrentState { get; set; }
+        
+        
         private void Update()
         {
             CurrentState.Execute(this);

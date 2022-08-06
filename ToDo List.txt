@@ -6,8 +6,6 @@
 
 -------------------------------Need Fix -----------------------------------
 
-1.Will add to enemies check if stuck. 
-(Enemies stuck around obstacle when player escaped to FOW.)
 
 2.In guard state if enemy spot player transations to chase but in chase state if player escape it return patrol state not guard state.
 
@@ -20,4 +18,8 @@ Enemy Chase state will stop and return patrol state if player escape to line of 
 Will add Field of view to enemy.
 
 Player movement, will check if there is a obstacle that block movement and if so will curve movement.
+
+Will add to enemies check if stuck. 
+(Enemies stuck around obstacle when player escaped to FOW.)
+
 
