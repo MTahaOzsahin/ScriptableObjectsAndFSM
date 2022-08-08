@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e97a810d6e62a141aff6e6028f13a82, type: 3}
-  m_Name: GuardSpottedEnemy
+  m_Name: CheckLastPositionGuard
   m_EditorClassIdentifier: 
-  Decision: {fileID: 11400000, guid: 8dd15ac6fd58c93418b70748914b924b, type: 2}
-  TrueState: {fileID: 11400000, guid: eecee6972fafd5640b7e90e0966e2889, type: 2}
-  FalseState: {fileID: 11400000, guid: 8394d450dc83b1f43921df1a841fc983, type: 2}
+  Decision: {fileID: 11400000, guid: 1f99f0bc9fc292044bfc3aace392bc3b, type: 2}
+  TrueState: {fileID: 11400000, guid: 8394d450dc83b1f43921df1a841fc983, type: 2}
+  FalseState: {fileID: 11400000, guid: 6c73c870764cd64419fceab84e0a8b78, type: 2}

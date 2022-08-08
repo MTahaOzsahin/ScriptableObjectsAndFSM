@@ -7,16 +7,19 @@ namespace ScriptableObjectsAndFSM.FSM
     public class BaseStateMachine : MonoBehaviour
     {
         [SerializeField] BaseState _initialState;
-        [SerializeField,Tooltip("if wanted to use fixed state and fixed transitions")] bool isFixedState;
         
         Dictionary<Type, Component> _cachedComponents;
 
         public BaseState CurrentState { get; set; }
-        public bool IsFixedState { get; set; }
+        public enum EnemyType
+        {
+            Guard,Patrol,Common
+        }
+        public EnemyType enemyType;
+
         private void Awake()
         {
             CurrentState = _initialState;
-            IsFixedState = isFixedState;
             _cachedComponents = new Dictionary<Type, Component>();
         }
         

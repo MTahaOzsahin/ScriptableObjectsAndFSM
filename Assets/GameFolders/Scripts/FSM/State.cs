@@ -7,22 +7,29 @@ namespace ScriptableObjectsAndFSM.FSM
     [CreateAssetMenu(menuName = "FSM/State")]
     public sealed class State : BaseState
     {
-        public List<FSMAction> Action = new List<FSMAction>();
-        public List<Transition> Transitions = new List<Transition>();
-        [Tooltip("Use only when fixed transition wanted")]
-        public List<Transition> FixedTransition = new List<Transition>();
+        public List<FSMAction> CommonActions = new List<FSMAction>();
+        public List<Transition> CommonTransitions = new List<Transition>();
+        public List<Transition> GuardTransitions = new List<Transition>();
+        public List<Transition> PatrolTransitions = new List<Transition>();
 
         public override void Execute(BaseStateMachine machine)
         {
-            if (machine.IsFixedState)
+            switch (machine.enemyType)
             {
-                foreach (var action in Action) action.Execute(machine);
-                foreach (var transition in FixedTransition) transition.Execute(machine);
-            }
-            else
-            {
-                foreach (var action in Action) action.Execute(machine);
-                foreach (var transition in Transitions) transition.Execute(machine);
+                case BaseStateMachine.EnemyType.Guard:
+                    foreach (var action in CommonActions) action.Execute(machine);
+                    foreach (var transition in GuardTransitions) transition.Execute(machine);
+                    break;
+                case BaseStateMachine.EnemyType.Patrol:
+                    foreach (var action in CommonActions) action.Execute(machine);
+                    foreach (var transition in PatrolTransitions) transition.Execute(machine);
+                    break;
+                case BaseStateMachine.EnemyType.Common:
+                    foreach (var action in CommonActions) action.Execute(machine);
+                    foreach (var transition in CommonTransitions) transition.Execute(machine);
+                    break;
+                default:
+                    break;
             }
         }
     }

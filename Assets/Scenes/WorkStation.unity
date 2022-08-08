@@ -2509,6 +2509,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8378700812093661072, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661075, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
@@ -2591,7 +2595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812450378912, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: currentStateText
@@ -4098,6 +4102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8378700812093661072, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661075, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
@@ -4180,7 +4188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812450378912, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: currentStateText
@@ -5597,6 +5605,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8378700812093661072, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661075, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
@@ -5679,7 +5691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}

@@ -29,7 +29,12 @@ namespace ScriptableObjectsAndFSM.Enemy
         public MeshFilter viewMeshFilter;
         Mesh viewMesh;
 
+
         public Transform Player { get; private set; }
+        public Vector3 LastKnownPosition { get; private set; }
+
+        public bool IsCheckComplete { get; private set; }
+
         void Start()
         {
             viewMesh = new Mesh();
@@ -201,11 +206,21 @@ namespace ScriptableObjectsAndFSM.Enemy
                 pointB = _pointB;
             }
         }
-        public bool Ping()
+        public bool Ping() // When player in enemy fow, returns true.
         {
             if (visibleTargets.Count > 0)
             {
+                LastKnownPosition = visibleTargets[0].transform.position;
                 Player = visibleTargets[0];
+                return true;
+            }
+            return false;
+        }
+        public bool IsCheckCompleted()
+        {
+            float distance = Vector3.Distance(transform.position,LastKnownPosition);
+            if (distance < 0.2f)
+            {
                 return true;
             }
             return false;

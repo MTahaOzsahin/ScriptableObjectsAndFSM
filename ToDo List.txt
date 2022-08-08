@@ -1,19 +1,27 @@
 ---------------------------------To Do--------------------------------------
 
-1.Will add more state. I am open to state ideas. 
+
 
 
 
 -------------------------------Need Fix -----------------------------------
 
+1.In "CheckLastKnowPosition" enemy go to last know position but while doing that if player get back in fow, enemy does not react.
 
-2.In guard state if enemy spot player transations to chase but in chase state if player escape it return patrol state not guard state.
+2.In "CheckLastKnownPosition" enemy just go to last known position but need to wait a few second to perform rotate() when reach position.
+so LastKnownPosition(Transitions) and HaveLostPLayer(Decision) need to fix.
+
+
 
 -------------------------------Completed-----------------------------------
+
+New "CheckLastKnownPosition" added. In this state enemy will go to player last known position when player escape from fow.
 
 New "Guard" state added.In Guard state enemy will stand still and rotate along y-axis.
 
 Enemy Chase state will stop and return patrol state if player escape to line of sight.
+
+Enemy Guard state will stop and return guard state if player escape to line of sight.
 
 Will add Field of view to enemy.
 

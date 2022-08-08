@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935ded31efef855418786d0efa552512, type: 3}
-  m_Name: Patrol
+  m_Name: CheckLastPosition
   m_EditorClassIdentifier: 
   CommonActions:
-  - {fileID: 11400000, guid: dad54aec077aa7b4a8f3eb76b4662f3f, type: 2}
-  CommonTransitions: []
-  GuardTransitions: []
+  - {fileID: 11400000, guid: 4176c59fa25cfc148818cd0b4f13c6db, type: 2}
+  CommonTransitions:
+  - {fileID: 0}
+  GuardTransitions:
+  - {fileID: 11400000, guid: dd36d8958f1841d43b56125b2b8a998d, type: 2}
   PatrolTransitions:
-  - {fileID: 11400000, guid: 999dcfb192a64a34ebc8e4f92172e21b, type: 2}
+  - {fileID: 11400000, guid: 6dc296e8222eb35459b908afa4bfdd99, type: 2}

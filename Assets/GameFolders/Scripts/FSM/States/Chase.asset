@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935ded31efef855418786d0efa552512, type: 3}
   m_Name: Chase
   m_EditorClassIdentifier: 
-  Action:
+  CommonActions:
   - {fileID: 11400000, guid: a58279a424ce39c49814472877784462, type: 2}
-  Transitions:
-  - {fileID: 11400000, guid: 6c88febcc46e34640b1121b4777a028f, type: 2}
-  FixedTransition:
-  - {fileID: 11400000, guid: 6dcf8375e2816ac4abec0699f40bd99f, type: 2}
+  CommonTransitions:
+  - {fileID: 11400000, guid: b3951812cdabb9b4e8b835072079b470, type: 2}
+  GuardTransitions:
+  - {fileID: 11400000, guid: b3951812cdabb9b4e8b835072079b470, type: 2}
+  PatrolTransitions:
+  - {fileID: 11400000, guid: b3951812cdabb9b4e8b835072079b470, type: 2}
