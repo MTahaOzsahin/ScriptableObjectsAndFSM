@@ -9,12 +9,22 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     [CreateAssetMenu(menuName = "FSM/Actions/Chase")]
     public class ChaseAction : FSMAction
     {
-        public override void Execute(BaseStateMachine stateMachine)
+        public override void MainExecute(BaseStateMachine stateMachine)
         {
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var enemySightSensor = stateMachine.GetComponent<EnemySightSensor>();
             if (enemySightSensor.Player == null) return;
             navMeshAgent.SetDestination(enemySightSensor.Player.position);
+        }
+
+        public override void OnEnterExecute(BaseStateMachine stateMachine)
+        {
+            Debug.Log("Chase enter");
+        }
+
+        public override void OnExitExecute(BaseStateMachine stateMachine)
+        {
+            Debug.Log("Chase exit");
         }
     }
 }

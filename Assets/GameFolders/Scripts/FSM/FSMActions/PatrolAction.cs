@@ -9,7 +9,7 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     [CreateAssetMenu(menuName = "FSM/Actions/Patrol")]
     public class PatrolAction : FSMAction
     {
-        public override void Execute(BaseStateMachine stateMachine)
+        public override void MainExecute(BaseStateMachine stateMachine)
         {
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
@@ -23,6 +23,16 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
                 navMeshAgent.velocity = (Vector3.one * 3);
             }
+        }
+
+        public override void OnEnterExecute(BaseStateMachine stateMachine)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void OnExitExecute(BaseStateMachine stateMachine)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

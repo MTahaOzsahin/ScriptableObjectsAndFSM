@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935ded31efef855418786d0efa552512, type: 3}
   m_Name: CheckLastPosition
   m_EditorClassIdentifier: 
-  CommonActions:
+  Actions:
   - {fileID: 11400000, guid: 4176c59fa25cfc148818cd0b4f13c6db, type: 2}
   CommonTransitions:
   - {fileID: 0}

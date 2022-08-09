@@ -9,7 +9,7 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     [CreateAssetMenu(menuName ="FSM/Actions/Guard")]
     public class GuardAction : FSMAction
     {
-        public override void Execute(BaseStateMachine stateMachine)
+        public override void MainExecute(BaseStateMachine stateMachine)
         {
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
@@ -19,6 +19,16 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
                 navMeshAgent.SetDestination(startPosition);
             }
             navMeshAgent.gameObject.transform.RotateAround(navMeshAgent.gameObject.transform.position,Vector3.up, 20f * Time.deltaTime);
+        }
+
+        public override void OnEnterExecute(BaseStateMachine stateMachine)
+        {
+            Debug.Log("Guard on enter");
+        }
+
+        public override void OnExitExecute(BaseStateMachine stateMachine)
+        {
+            Debug.Log("Guard on exit");
         }
     }
 }
