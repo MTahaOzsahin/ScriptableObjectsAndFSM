@@ -9,10 +9,12 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     [CreateAssetMenu(menuName = "FSM/Actions/Patrol")]
     public class PatrolAction : FSMAction
     {
+        NavMeshAgent navMeshAgent;
+        PatrolPoints patrolPoints;
         public override void MainExecute(BaseStateMachine stateMachine)
         {
-            var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
-            var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
+            //var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+            //var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
             if (patrolPoints.HasReached(navMeshAgent))
             {
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
@@ -27,12 +29,13 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
 
         public override void OnEnterExecute(BaseStateMachine stateMachine)
         {
-            throw new System.NotImplementedException();
+            navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+            patrolPoints = stateMachine.GetComponent<PatrolPoints>();
         }
 
         public override void OnExitExecute(BaseStateMachine stateMachine)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

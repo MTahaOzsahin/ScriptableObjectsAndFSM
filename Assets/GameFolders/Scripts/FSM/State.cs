@@ -34,10 +34,9 @@ namespace ScriptableObjectsAndFSM.FSM
             {
                 case BaseStateMachine.EnemyType.Guard:
                     foreach (var action in Actions) action.MainExecute(machine);
-                    foreach (var transition in GuardTransitions)
+                    foreach (var transition in GuardTransitions) // Need to cvheck every transition is okay ?
                     {
                         transition.Execute(machine);
-                        Debug.Log("a");
                     }
                     break;
                 case BaseStateMachine.EnemyType.Patrol:

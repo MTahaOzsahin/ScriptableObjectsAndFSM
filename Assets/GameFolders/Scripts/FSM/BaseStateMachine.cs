@@ -11,12 +11,21 @@ namespace ScriptableObjectsAndFSM.FSM
         Dictionary<Type, Component> _cachedComponents;
 
         public BaseState CurrentState { get; set; }
+        public BaseState NextState { get; set; }
         public enum EnemyType { Guard,Patrol,Common}
         public EnemyType enemyType;
         private void Awake()
         {
             CurrentState = _initialState;
             _cachedComponents = new Dictionary<Type, Component>();
+        }
+        private void OnEnable()
+        {
+            Transition.OnStateChange += OnStateChange;
+        }
+        private void OnDisable()
+        {
+            Transition.OnStateChange -= OnStateChange;
         }
         private void Start()
         {
@@ -26,11 +35,11 @@ namespace ScriptableObjectsAndFSM.FSM
         {
             CurrentState.MainExecute(this);
         }
-        public void OnStateChange(BaseState newState)
+        public void OnStateChange()
         {
             CurrentState.OnExitExecute(this);
-            newState.OnEnterExecute(this);
-            CurrentState = newState;
+            NextState.OnEnterExecute(this);
+            CurrentState = NextState;
         }
         public new T GetComponent<T>() where T : Component
         {

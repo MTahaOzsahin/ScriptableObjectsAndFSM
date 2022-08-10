@@ -3,16 +3,15 @@ using ScriptableObjectsAndFSM.FSM.FSMActions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ScriptableObjectsAndFSM.FSM.FSMDecisions
 {
-    [CreateAssetMenu(menuName = "FSM/Decisions/ Have Lost Player")]
-    public class HaveLostPLayer : Decision
+    [CreateAssetMenu(menuName = "FSM/Decisions/ Searching")]
+    public class SearchDecision : Decision
     {
         public override bool Decide(BaseStateMachine stateMachine)
         {
-            //var checkLastPosition = stateMachine.GetComponent<CheckLastPosition>();
-            //return checkLastPosition.IsCheckCompleted();
             var enemyInLineOfSight = stateMachine.GetComponent<EnemySightSensor>();
             return enemyInLineOfSight.IsCheckCompleted();
         }

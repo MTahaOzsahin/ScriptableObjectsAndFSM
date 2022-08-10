@@ -11,7 +11,6 @@
 2.In "CheckLastKnownPosition" enemy just go to last known position but need to wait a few second to perform rotate() when reach position.
 so LastKnownPosition(Transitions) and HaveLostPLayer(Decision) need to fix.
 
-3.Need something that will known when enemy change states so its call current state's OnExitExecute() and new state's OnEnterExecute().
 
 -------------------------------Completed-----------------------------------
 
