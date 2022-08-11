@@ -1002,6 +1002,10 @@ PrefabInstance:
       propertyPath: _initialState
       value: 
       objectReference: {fileID: 11400000, guid: 8394d450dc83b1f43921df1a841fc983, type: 2}
+    - target: {fileID: 8378700812093661074, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
+      propertyPath: viewRadius
+      value: 23.37
+      objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661075, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 

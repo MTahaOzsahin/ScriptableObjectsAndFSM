@@ -1,4 +1,5 @@
 using ScriptableObjectsAndFSM.Enemy;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,10 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     {
         NavMeshAgent navMeshAgent;
         EnemySightSensor enemySightSensor;
+
+
         public override void MainExecute(BaseStateMachine stateMachine)
         {
-            //var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
-            //var enemySightSensor = stateMachine.GetComponent<EnemySightSensor>();
             if (enemySightSensor.Player == null) return;
             navMeshAgent.SetDestination(enemySightSensor.Player.position);
         }

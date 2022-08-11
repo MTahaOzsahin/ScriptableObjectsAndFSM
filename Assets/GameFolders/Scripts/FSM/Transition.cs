@@ -14,7 +14,7 @@ namespace ScriptableObjectsAndFSM.FSM
 
         public void Execute(BaseStateMachine stateMachine)
         {
-            if (Decision.Decide(stateMachine) && !(TrueState is RemainInState))
+            if (Decision.Decide(stateMachine) && TrueState is not RemainInState)
             {
                 stateMachine.NextState = TrueState;
                 if (stateMachine.CurrentState != stateMachine.NextState)
@@ -22,7 +22,7 @@ namespace ScriptableObjectsAndFSM.FSM
                     OnStateChange?.Invoke();
                 }
             }
-            else if (!Decision.Decide(stateMachine) && !(FalseState is RemainInState))
+            else if (!Decision.Decide(stateMachine) && FalseState is not RemainInState)
             {
                 stateMachine.NextState = FalseState;
                 if (stateMachine.CurrentState != stateMachine.NextState)

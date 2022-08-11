@@ -1,3 +1,4 @@
+using ScriptableObjectsAndFSM.FSM.FSMActions;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,10 +23,13 @@ namespace ScriptableObjectsAndFSM.FSM
         private void OnEnable()
         {
             Transition.OnStateChange += OnStateChange;
+            SearchAction.OnActionComplete += OnStateComplete;
+            
         }
         private void OnDisable()
         {
             Transition.OnStateChange -= OnStateChange;
+            SearchAction.OnActionComplete -= OnStateComplete;
         }
         private void Start()
         {
@@ -40,6 +44,12 @@ namespace ScriptableObjectsAndFSM.FSM
             CurrentState.OnExitExecute(this);
             NextState.OnEnterExecute(this);
             CurrentState = NextState;
+        }
+        public void OnStateComplete()
+        {
+            CurrentState.OnExitExecute(this);
+            CurrentState = _initialState;
+            CurrentState.OnEnterExecute(this);
         }
         public new T GetComponent<T>() where T : Component
         {

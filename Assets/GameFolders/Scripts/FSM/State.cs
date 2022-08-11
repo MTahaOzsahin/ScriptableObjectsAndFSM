@@ -36,6 +36,7 @@ namespace ScriptableObjectsAndFSM.FSM
                     foreach (var action in Actions) action.MainExecute(machine);
                     foreach (var transition in GuardTransitions) // Need to cvheck every transition is okay ?
                     {
+                        
                         transition.Execute(machine);
                     }
                     break;

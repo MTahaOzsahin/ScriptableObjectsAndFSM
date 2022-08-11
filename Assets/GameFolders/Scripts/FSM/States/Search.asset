@@ -17,5 +17,4 @@ MonoBehaviour:
   CommonTransitions: []
   GuardTransitions:
   - {fileID: 11400000, guid: dd36d8958f1841d43b56125b2b8a998d, type: 2}
-  PatrolTransitions:
-  - {fileID: 11400000, guid: dd36d8958f1841d43b56125b2b8a998d, type: 2}
+  PatrolTransitions: []
