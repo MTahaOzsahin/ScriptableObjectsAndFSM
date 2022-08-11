@@ -1,5 +1,4 @@
 using ScriptableObjectsAndFSM.Enemy;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +6,13 @@ using UnityEngine.AI;
 
 namespace ScriptableObjectsAndFSM.FSM.FSMActions
 {
-    [CreateAssetMenu(menuName = "FSM/Actions/CheckLastPosition")]
+    [CreateAssetMenu(menuName = "FSM/Actions/Search")]
     public class SearchAction : FSMAction
     {
         NavMeshAgent navMeshAgent;
         EnemySightSensor enemySightSensor;
 
-        public static event Action OnActionComplete;
+        public static event System.Action OnActionComplete;
 
         public override void MainExecute(BaseStateMachine stateMachine)
         {

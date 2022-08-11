@@ -995,6 +995,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8378700812093661072, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
+      propertyPath: enemyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378700812093661072, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: isFixedState
       value: 1
       objectReference: {fileID: 0}
@@ -1002,10 +1006,6 @@ PrefabInstance:
       propertyPath: _initialState
       value: 
       objectReference: {fileID: 11400000, guid: 8394d450dc83b1f43921df1a841fc983, type: 2}
-    - target: {fileID: 8378700812093661074, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
-      propertyPath: viewRadius
-      value: 23.37
-      objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661075, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
@@ -1088,7 +1088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812450378912, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: currentStateText
@@ -2599,7 +2599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812450378912, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: currentStateText
@@ -4192,7 +4192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812450378912, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: currentStateText
@@ -5695,7 +5695,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378700812093661080, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3434931708500184380, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aaef1ebab7f09264c85a0ad3103b3b6b, type: 3}

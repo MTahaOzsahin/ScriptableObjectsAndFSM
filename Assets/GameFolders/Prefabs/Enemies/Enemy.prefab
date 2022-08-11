@@ -659,7 +659,6 @@ GameObject:
   - component: {fileID: 8378700812093661075}
   - component: {fileID: 8378700812093661072}
   - component: {fileID: 8378700812450378912}
-  - component: {fileID: 3434931708500184380}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Player
@@ -792,7 +791,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   visibleTargets: []
-  meshResolution: 1
+  meshResolution: 3
   edgeResolveIterations: 4
   edgeDistanceThreshold: 0.5
   viewMeshFilter: {fileID: 4073291367963943203}
@@ -830,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialState: {fileID: 11400000, guid: 9311b1a1acfbfd54c9da00b685ebd5c2, type: 2}
-  enemyType: 0
+  enemyType: 1
 --- !u!114 &8378700812450378912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,15 +845,3 @@ MonoBehaviour:
   currentStateText: {fileID: 2119315635}
   nextPatrolPointText: {fileID: 874364069}
   velocity: 0
---- !u!114 &3434931708500184380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8378700812093661080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687c01d3658c1c4418515f82206fa230, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

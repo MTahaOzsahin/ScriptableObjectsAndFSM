@@ -12,15 +12,17 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     {
         NavMeshAgent navMeshAgent;
         PatrolPoints patrolPoints;
-
-
         public override void MainExecute(BaseStateMachine stateMachine)
         {
-            if (patrolPoints.HasReached(navMeshAgent))
+            //if (patrolPoints.HasReached(navMeshAgent))
+            //{
+            //    navMeshAgent.SetDestination(patrolPoints.GetNext().position);
+            //}
+            if (Vector3.Distance(navMeshAgent.destination,navMeshAgent.transform.position) < 0.2f)
             {
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
             }
-            else if (navMeshAgent.velocity.magnitude < 0.02f) // To avoid enemy stuck around obstackle after lose player.
+            if (navMeshAgent.velocity.sqrMagnitude < 0.02f) // To avoid enemy stuck around obstackle after lose player.
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
@@ -36,7 +38,6 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
 
         public override void OnExitExecute(BaseStateMachine stateMachine)
         {
-
         }
     }
 }

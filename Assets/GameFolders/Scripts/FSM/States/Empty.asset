@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935ded31efef855418786d0efa552512, type: 3}
-  m_Name: Search
+  m_Name: Empty
   m_EditorClassIdentifier: 
   Actions:
-  - {fileID: 11400000, guid: 4176c59fa25cfc148818cd0b4f13c6db, type: 2}
+  - {fileID: 11400000, guid: 8a5323473c5e80a429e22c5eec67aee3, type: 2}
   CommonTransitions: []
-  GuardTransitions:
-  - {fileID: 11400000, guid: dd36d8958f1841d43b56125b2b8a998d, type: 2}
-  PatrolTransitions:
-  - {fileID: 11400000, guid: ecee7926d5786834f88abaaccfedf09f, type: 2}
+  GuardTransitions: []
+  PatrolTransitions: []

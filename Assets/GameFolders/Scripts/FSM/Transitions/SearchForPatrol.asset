@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e97a810d6e62a141aff6e6028f13a82, type: 3}
-  m_Name: SpottedEnemyForChase
+  m_Name: SearchForPatrol
   m_EditorClassIdentifier: 
-  decisionType: 0
+  decisionType: 1
   FirstDecision: {fileID: 11400000, guid: 8dd15ac6fd58c93418b70748914b924b, type: 2}
-  SecondDecision: {fileID: 0}
+  SecondDecision: {fileID: 11400000, guid: d48cb0314a4be2945adf01d2918265aa, type: 2}
   FirstState: {fileID: 11400000, guid: eecee6972fafd5640b7e90e0966e2889, type: 2}
-  SecondState: {fileID: 0}
-  ThirdState: {fileID: 0}
+  SecondState: {fileID: 11400000, guid: eecee6972fafd5640b7e90e0966e2889, type: 2}
+  ThirdState: {fileID: 11400000, guid: 9311b1a1acfbfd54c9da00b685ebd5c2, type: 2}
   FourtState: {fileID: 11400000, guid: 8de31840b6ed8ce43bc6755e23d6928a, type: 2}

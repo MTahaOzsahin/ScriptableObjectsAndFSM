@@ -5,14 +5,17 @@
 
 
 -------------------------------Need Fix -----------------------------------
-
-1.In "CheckLastKnowPosition" enemy go to last know position but while doing that if player get back in fow, enemy does not react.
+1.Patrol state does not work if there is more than one enemy in scene.
 
 2.In "CheckLastKnownPosition" enemy just go to last known position but need to wait a few second to perform rotate() when reach position.
 so LastKnownPosition(Transitions) and HaveLostPLayer(Decision) need to fix.
 
 
 -------------------------------Completed-----------------------------------
+
+Fixed: while searching, if player get back in fow now enemy react.
+
+Fixed: After search enemy go to initial state.
 
 Added OnEnterExecute and OnExitExeceute for all States.
 
