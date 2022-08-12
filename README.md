@@ -4,7 +4,10 @@ This project is a workstation created to understand and get use to Finite state 
 
 
 Video : 
-https://user-images.githubusercontent.com/87945619/184287022-c885f687-0224-4fc3-9e42-f613f59566e4.mp4
+
+
+https://user-images.githubusercontent.com/87945619/184287958-4ad2a648-a3cf-4883-980f-e5fb66df2b83.mp4
+
 
 
 
