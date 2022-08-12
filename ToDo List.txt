@@ -5,13 +5,12 @@
 
 
 -------------------------------Need Fix -----------------------------------
-1.Patrol state does not work if there is more than one enemy in scene.
 
-2.In "CheckLastKnownPosition" enemy just go to last known position but need to wait a few second to perform rotate() when reach position.
-so LastKnownPosition(Transitions) and HaveLostPLayer(Decision) need to fix.
+
 
 
 -------------------------------Completed-----------------------------------
+Fixed: Patrol state does not work if there is more than one enemy in scene. Because in PatrolAction script i did use global variable so all patrol enemies in scene try to use only one variable i created. Now i changed to local variable so every enemy use their one.
 
 Fixed: while searching, if player get back in fow now enemy react.
 

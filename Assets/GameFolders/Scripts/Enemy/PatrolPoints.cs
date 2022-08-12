@@ -10,11 +10,9 @@ namespace ScriptableObjectsAndFSM.Enemy
         [SerializeField] Transform[] patrolPoints;
         Vector3 startPosition;
         public Transform CurrentPoint => patrolPoints[currentPoint];
-        public GameObject nextPatrolPoint { get; set; }
+        public Transform nextPatrolPoint { get; set; }
 
         public Vector3 StartPosition => startPosition;
-
-
 
         int currentPoint = 0;
         private void Awake()
@@ -23,8 +21,8 @@ namespace ScriptableObjectsAndFSM.Enemy
         }
         public Transform GetNext()
         {
-            Transform point = patrolPoints[Random.Range(currentPoint,patrolPoints.Length)];
-            nextPatrolPoint = point.gameObject;
+            Transform point = patrolPoints[Random.Range(currentPoint, patrolPoints.Length)];
+            nextPatrolPoint = point;
             return point;
         }
         public bool HasReached(NavMeshAgent agent)
@@ -33,7 +31,7 @@ namespace ScriptableObjectsAndFSM.Enemy
             {
                 if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    if (!agent.hasPath && agent.velocity.sqrMagnitude == 0f)
+                    if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                     {
                         return true;
                     }

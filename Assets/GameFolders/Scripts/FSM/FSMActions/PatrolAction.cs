@@ -10,19 +10,12 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     [CreateAssetMenu(menuName = "FSM/Actions/Patrol")]
     public class PatrolAction : FSMAction
     {
-        NavMeshAgent navMeshAgent;
-        PatrolPoints patrolPoints;
         public override void MainExecute(BaseStateMachine stateMachine)
         {
-            //if (patrolPoints.HasReached(navMeshAgent))
-            //{
-            //    navMeshAgent.SetDestination(patrolPoints.GetNext().position);
-            //}
-            if (Vector3.Distance(navMeshAgent.destination,navMeshAgent.transform.position) < 0.2f)
-            {
-                navMeshAgent.SetDestination(patrolPoints.GetNext().position);
-            }
-            if (navMeshAgent.velocity.sqrMagnitude < 0.02f) // To avoid enemy stuck around obstackle after lose player.
+            var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+            var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
+
+            if (patrolPoints.HasReached(navMeshAgent))
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.SetDestination(patrolPoints.GetNext().position);
@@ -32,12 +25,15 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
 
         public override void OnEnterExecute(BaseStateMachine stateMachine)
         {
-            navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
-            patrolPoints = stateMachine.GetComponent<PatrolPoints>();
+            var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+            var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
+            navMeshAgent.SetDestination(patrolPoints.GetNext().position);
         }
 
         public override void OnExitExecute(BaseStateMachine stateMachine)
         {
+            var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+            navMeshAgent.ResetPath();
         }
     }
 }

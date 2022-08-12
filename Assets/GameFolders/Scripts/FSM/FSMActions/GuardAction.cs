@@ -10,12 +10,10 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
     [CreateAssetMenu(menuName ="FSM/Actions/Guard")]
     public class GuardAction : FSMAction
     {
-        NavMeshAgent navMeshAgent;
-        PatrolPoints patrolPoints;
-
-
         public override void MainExecute(BaseStateMachine stateMachine)
         {
+            var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
+            var patrolPoints = stateMachine.GetComponent<PatrolPoints>();
             Vector3 startPosition = patrolPoints.StartPosition;
             if (Vector3.Distance(startPosition,navMeshAgent.gameObject.transform.position) > 0.2f )
             {
@@ -26,14 +24,12 @@ namespace ScriptableObjectsAndFSM.FSM.FSMActions
 
         public override void OnEnterExecute(BaseStateMachine stateMachine)
         {
-            Debug.Log("Guard on enter");
-            navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
-            patrolPoints = stateMachine.GetComponent<PatrolPoints>();
+
         }
 
         public override void OnExitExecute(BaseStateMachine stateMachine)
         {
-            Debug.Log("Guard on exit");
+
         }
     }
 }
